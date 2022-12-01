@@ -1,0 +1,22 @@
+@import url('antd/dist/antd.css');
+
+// @use '~nprogress/nprogress'; // loading a css file from the nprogress node module
+// Note: You can refix paths with ~, as displayed above, to resolve modules from node_modules
+
+.ant-input {
+  border-radius: 0px !important;
+}
+
+.ant-btn-primary {
+  border-radius: 0px !important;
+}
+
+.ant-btn-primary {
+  border-radius: 0px !important;
+}
+
+// .ant-btn-primary:focus,
+// .ant-btn-primary:hover {
+//   background-color: red !important;
+//   border-color: red;
+// }
