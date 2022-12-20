@@ -28,6 +28,7 @@
     "yup": "0.32.11"
   },
   "scripts": {
+    "start": "env-cmd -f .env.development react-scripts start",
     "start:dev": "env-cmd -f .env.development react-scripts start",
     "build": "env-cmd -f .env.production react-scripts build",
     "test:dev": "env-cmd -f .env.development react-scripts test",
