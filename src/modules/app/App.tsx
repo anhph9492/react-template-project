@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {Suspense} from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import AuthLayoutComponent from '../../core/layout/auth'
 import LoginComponent from '../auth/login'
 import RegisterComponent from '../auth/register'
-import StudentComponent from '../student'
+const StudentComponent = React.lazy(() => import('../student'))
 import './App.scss'
 
 function App() {
@@ -25,9 +25,9 @@ function App() {
   // }
 
   return (
+    <Suspense fallback={<>loading.......</>} >
     <BrowserRouter>
       <Routes>
-        {/* <Route path='/' element={<HomeComponent />} /> */}
         <Route path='/' element={<LoginComponent />} />
         <Route path='/login' element={<LoginComponent />} />
         <Route path='/auth' element={<AuthLayoutComponent />}>
@@ -41,11 +41,8 @@ function App() {
         </Route>
         <Route path='*' element={<Navigate to={'/'} replace />} />
       </Routes>
-
-      {/* <Button type='primary' onClick={handleLogout}>
-          logout
-        </Button> */}
     </BrowserRouter>
+    </Suspense>
   )
 }
 
